@@ -1,4 +1,3 @@
-import 'dart:ui';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firestore_cloud/src/user_model.dart';
@@ -20,11 +19,14 @@ class _SignUpState extends State<SignUp> {
 
   // void createUser() {
   //    UserModel(
-  //       username: _usernameController.text,
+  //        username: _usernameController.text,
   //       email: _emailController.text,
   //       password: _passwordController.text);
+  //    FirebaseFirestore.instance
+  //         .collection('users')
+  //         .add(userModel.toJson());
   // }
-  //   // Save user data to Firestore using the Firestore package.
+    // Save user data to Firestore using the Firestore package.
   //   FirebaseFirestore.instance
   //       .collection('users')
   //       .add(userModel.toJson())
@@ -91,6 +93,7 @@ class _SignUpState extends State<SignUp> {
               ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
+
                     Map<String, dynamic> data = {
                       'Username': _usernameController.text,
                       'Email': _emailController.text,
